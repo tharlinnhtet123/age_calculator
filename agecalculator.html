@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <h1> Age Calculator Exercise</h1>
+    <p>
+        Enter your Date of Birth:
+        <input id="date" type="date">
+        <button onclick="calc()">calculate</button>
+    </p>
+    <p>
+        Your Age is : <span id="s_age"></span>
+    </p>
+</body>
+<script>
+    function calc(){
+        let userInput = document.getElementById("date");
+        let dob = new Date(userInput.value);
+        let dob_year = dob.getFullYear();
+        
+        let today = new Date();
+        let today_year = today.getFullYear();
+
+        let result = parseInt(today_year)-parseInt(dob_year);
+        //console.log(result)
+        document.getElementById("s_age").innerHTML=result + "years old"
+    }
+</script>
+</html>
